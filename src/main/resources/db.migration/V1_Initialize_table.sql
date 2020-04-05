@@ -40,3 +40,8 @@ create table oauth_refresh_token
     token bytea,
     authentication bytea
 );
+
+
+INSERT INTO oauth_client_details(client_id, client_secret, scope, access_token_validity, authorized_grant_types)
+VALUES ('test', 'test', 'read,write', 3600,
+        'client_credentials, authorization_code, implicit, password, refresh_token');
