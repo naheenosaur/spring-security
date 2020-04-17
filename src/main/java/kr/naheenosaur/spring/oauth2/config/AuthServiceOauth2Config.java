@@ -42,7 +42,7 @@ public class AuthServiceOauth2Config extends AuthorizationServerConfigurerAdapte
 
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
-        final JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+        final JwtAccessTokenConverter converter = new CustomJwtAccessTokenConverter();
         KeyStoreKeyFactory keyStoreKeyFactory
                 = new KeyStoreKeyFactory(new ClassPathResource("server.jks"), KEY_STORE_FACTORY_PASSWORD.toCharArray());
         converter.setKeyPair(keyStoreKeyFactory.getKeyPair("server"));

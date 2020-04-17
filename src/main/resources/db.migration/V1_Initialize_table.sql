@@ -45,3 +45,12 @@ create table oauth_refresh_token
 INSERT INTO oauth_client_details(client_id, client_secret, scope, access_token_validity, authorized_grant_types)
 VALUES ('test', 'test', 'read,write', 3600,
         'client_credentials, authorization_code, implicit, password, refresh_token');
+
+-- custom data
+CREATE TABLE public.employee
+(
+    -- pc 등록
+    seq bigserial NOT NULL PRIMARY KEY,
+    company_id  character varying(255) NOT NULL,
+    employee_id character varying(255) NOT NULL
+);
